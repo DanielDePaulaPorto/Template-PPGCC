@@ -1,0 +1,354 @@
+\documentclass[12pt, oneside, a4paper]{ppgcc}
+
+%******************* Importing packages *********************************************
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[brazilian,english]{babel}
+\usepackage[brazil]{babel}
+\usepackage{graphicx,url}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{amsmath,amsfonts,amscd,bezier,amssymb}
+\usepackage{xspace}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{placeins} % supporting figures placement
+\usepackage{booktabs} % style for plain tables
+\usepackage{colortbl} % for colouring tables
+\usepackage{luximono}
+\usepackage{slashbox}
+\usepackage{microtype}
+\usepackage{calligra}
+\usepackage{lscape}
+\usepackage{scalefnt}
+\usepackage{lipsum}
+\usepackage{pgfgantt} % para inserir o cronograma baseado no gráfico de Gantt
+\usepackage[top=20mm,bottom=10mm,left=30mm,right=20mm,pdftex,includeheadfoot]{geometry}
+\usepackage{times}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{verbatim}
+\usepackage{textfit}
+\usepackage{alltt}
+\usepackage{ae}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{multicol}
+\usepackage{helvet}
+\usepackage{paralist}
+\usepackage{enumerate}
+\usepackage{wasysym} % package for special symbols and emoticons
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage{pdflscape}
+\usepackage{lscape}
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage{tabularx}
+%\usepackage[scaled=0.9]{luximono} % import font
+\usepackage[%numbers,
+            authoryear,
+            sort&compress,]{natbib}
+\usepackage[pdftex]{hyperref}  % create hyperlinks in the pdf
+\usepackage{pdfpages}
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+
+%*********************  Definindo novas cores  *******************************
+\definecolor{verde}{rgb}{0.25,0.5,0.35}
+\definecolor{jpurple}{rgb}{0.5,0,0.35}
+\definecolor{Blue}{rgb}{0,0,0.9}
+\definecolor{darkgreen}{cmyk}{1,0,1,0}
+
+
+%*********************  Parâmetros  ******************************************
+
+\titulo{Exemplo de título grande para ocupar mais de uma linha}
+\autor{Fulano de Tal}
+\orientador[Orientadora]{Profa. Dra. Fulana de Tal}
+\coorientador[Co-orientadora]{Profa. Dra. Coorirentadora Fulana de Tal}
+\dataDocumento{Maio/2018}
+\tipodoc{Qualificação} %Dissertação/Qualificação/Tese 
+\tipotitulo{Doutor} %Mestre/Doutor
+\areaconcentracao{Engenharia de software}
+
+
+%*********************  Parâmetros PDF ***************************************
+\hypersetup{colorlinks=true,debug=false,
+   linkcolor=black,%%% tableofcontents,\ref,\footnote,etc colour
+   citecolor=black, %%% \cite colour
+   urlcolor=black, %%% \url and \href colour
+   pdftitle={\PPGtitulo},
+   pdfauthor={\PPGautor},
+   pdfsubject={\comentario}}
+
+\pdfcompresslevel=9
+\DeclareGraphicsExtensions{.png,.jpg,.pdf,.mps}
+
+
+
+
+%*********************  Comandos ***************************************
+\include{Comandos}
+
+% with parameters
+% Setting tables
+	\newcommand{\confTab}{
+	\fontencoding{T1}
+ 	\fontfamily{\sfdefault}
+	\fontseries{m}
+	\fontshape{n}
+	\fontsize{10}{15}
+	\selectfont
+	\rowcolors{2}{}{lightgray!30}
+	\centering
+}
+
+\renewcommand{\lstlistingname}{Listagem de Código}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Listagens de Códigos}% List of Listings -> List of Algorithms
+
+
+\newcommand{\blue}[1]{{{\color{blue} #1}}}
+\newcommand{\red}[1]{{{\color{red} #1}}}
+\newcommand{\code}[1]{{\texttt{#1}}}
+\newcommand{\wild}[1]{{``\texttt{#1}''}}
+\newcommand{\opname}[1]{{\textsf{#1}}}
+\newcommand{\smallop}[1]{{\small\textsf{#1}}}
+%\newcommand{\fault}[1]{{\footnotesize\textsf{#1}}}
+\newcommand{\fault}[1]{{\textsf{#1}}}
+\newcommand{\element}[1]{{\textsf{#1}}}
+\newcommand{\concept}[1]{{\textbf{\emph{#1}}}}
+\newcommand{\declare}{\code{declare}}
+
+
+%*****************************  style definitions   ************************
+
+\widowpenalty=10000
+\clubpenalty=10000
+\exhyphenpenalty=10000
+
+% defining space between figures, captions and text
+\setlength{\abovecaptionskip}{0.2cm}
+\setlength\textfloatsep{12pt}
+\setlength\floatsep{12pt}
+
+\headheight 17.1pt
+
+\setcounter{secnumdepth} {3} % Adjusting number of levels
+\setcounter{tocdepth} {3} % Adjusting number of levels in table of contents
+
+
+%*********************  Documento  ******************************************
+% Estrutura: https://www.mindomo.com/pt/mindmap/mapadissertacaosandra-1cf625c9dea942e4b315aa3a2d9e10b5
+
+\begin{document}
+
+%*********************  Elementos pré-textuais  *****************************
+% Agradecimentos, Resumo, Abstract, Índices, Abreviaturas
+
+\pagestyle{empty}
+\thispagestyle{empty}
+\let\cite=\citep    			% defines citation style
+\cleardoublepage
+
+%%% CAPA
+\capa
+
+
+%%% FOLHA DE ROSTO
+\rosto
+
+
+%%% VERSO DA FOLHA DE ROSTO
+%Não é necessária por enquanto
+
+
+%%% FOLHA DE APROVAÇÃO
+%Não é necessária por enquanto
+
+
+%%% DEDICATÓRIA
+\dedicatoria{Dedico à Fulano.}
+
+
+% Inicia a numeração das páginas
+\newpage
+\pagestyle{plain}
+\thispagestyle{plain}
+\renewcommand{\thepage}{\roman{page}}
+\setcounter{page}{1}
+
+
+%%% AGRADECIMENTOS
+\agradecimentos{
+	\lipsum[1-2]
+}
+
+%%% EPÍGRAFE
+\epigrafe{
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+}
+{Autor da Epígrafe}
+
+
+%%% RESUMO PORTUGUES
+\resumo{
+    \textbf{\textit{Contexto}}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    \textbf{\textit{Objetivos}}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    \textbf{\textit{Metodo}}:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    \textbf{\textit{Resultados}}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    \textbf{\textit{Conclusão}}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+}
+{chave 1, chave 2, chave 3, chave 4, chave 5, chave 6, chave 7, chave 8, chave 9, chave 10, chave 11, chave 12, chave 13, chave 14, chave 15, chave 16, chave 17, chave 18, chave 19, chave 20}
+
+
+%%% RESUMO INGLES
+\abstract{
+    \textbf{\textit{Context}}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    \textbf{\textit{Objective}}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    \textbf{\textit{Method}}:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    \textbf{\textit{Results}}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    \textbf{\textit{Conclusão}}: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+}
+{key1, key2, key3, key4, key5, key6, key7, key8, key9, key10, key11, key12, key13, key14, key15, key16, key17, key18, key19, key20}
+
+
+%%% listas
+%\lstlistoflistings
+
+
+%%% FIGURAS
+\listoffigures
+
+
+%%% TABELAS
+\listoftables
+
+
+%%% ABREVIATURAS E SIGLAS
+\begin{abbreviations}
+	
+	\begin{table}[!ht]
+	\setlength{\tabcolsep}{3pt}
+	\centering
+		\begin{tabular}{  l p{13cm}  } 
+			 \textbf{BPMN}   & \textit{Business Process Model Notation} \\
+		\end{tabular}
+	\end{table}
+
+\end{abbreviations}
+
+
+%%% SUMARIO
+\renewcommand\contentsname{Sumário}
+\tableofcontents
+
+%***********************************************************************************
+%**************************** FORMATAÇÃO DOS CAPÍTULOS *****************************
+%***********************************************************************************
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+%\newpage
+\onehalfspace
+%\doublespace
+%\linespread{1.35}
+
+%% from quali.tex
+%\pagestyle{fancy}   			% defines the page style
+%\fancyfoot[C]{\thepage}  		% insert page number in the footer
+%\fancyhead[R]{\small\leftmark}
+%\lhead{}            			% defines right side of heading as empty
+%\chead{}						% defines centre of heading as empty
+
+\pagestyle{fancy}   								% defines the page style
+\fancyhead{}										% cleaning-up previous settings
+
+\fancyhead[L,R]{\textsl{\leftmark}}
+\rhead{\sffamily\thepage\space}
+
+%\fancyhead[LE]{\nouppercase{\slshape \rightmark}} 	% inserts the section name in the header of even pages
+%\fancyhead[RO]{\nouppercase{\slshape \leftmark}}  	% inserts the chapter name in the header of odd pages
+%\cfoot{\thepage}	
+\cfoot{}											% clear the footer
+\renewcommand{\headrulewidth}{1pt}					% defining header and footer rules
+%\renewcommand{\footrulewidth}{1pt}
+
+
+%*******************************************************************************
+
+\newpage
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+\renewcommand{\chaptermark}[1]{\markboth{\textit{ \chaptername \ \thechapter.\ #1}}{}}
+
+
+
+%********************************************************************************
+%*************** CAPÍTULOS ******************************************************
+%********************************************************************************
+
+\chapter{Capítulo de exemplo}\label{cap:exemplo}
+\input{Capitulo-1-Exemplo/capExemplo}
+
+%********************************************************************************
+%********************************************************************************
+
+\chapter{Fundamentação teórica}\label{cap:fundamentos} 
+\input{Capitulo-2-NomeDoCapitulo/capNomeDoCapitulo}
+
+%********************************************************************************
+%********************************************************************************
+
+\chapter{Revisão Sistemática}\label{cap:revisao} 
+\input{Capitulo-3-NomeDoCapitulo/capNomeDoCapitulo}
+
+%********************************************************************************
+%********************************************************************************
+
+\chapter{Proposta de Pesquisa}\label{cap:proposta} 
+\input{Capitulo-4-NomeDoCapitulo/capNomeDoCapitulo}
+
+%********************************************************************************
+%******************  Bibliografia  **********************************************
+%********************************************************************************
+
+%\bibliographystyle{ppgcc2EN}
+\bibliographystyle{ppgcc}
+\newpage
+\bibliografia
+\renewcommand{\bibname}{\textbf{Refer\^encias}}
+%\citeoption{abnt-etal-cite=2,abnt-etal-list=0}
+\bibliography{references}
+
+
+%********************************************************************************
+%******************** APÊNDICES *************************************************
+%********************************************************************************
+
+\clearpage{}
+\appendix
+%\addcontentsline{toc}{chapter}{Apêndice}
+\renewcommand{\chaptername}{Ap\^endice} % para colocar escrito Apêndice no cabeçalho
+
+\chapter{Ferramenta StArt}\label{cap:ferramentaStart}
+\thispagestyle{empty}
+\input{Capitulo-Apendices/ferramentaStart}
+
+
+%********************************************************************************
+%******************** ANEXOS ****************************************************
+%********************************************************************************
+
+\clearpage{}
+\attachment
+%\addcontentsline{toc}{chapter}{Anexo}
+\renewcommand{\chaptername}{Anexo} % para colocar escrito Apêndice no cabeçalho
+
+\chapter{Anexo da Ferramenta StArt} \label{cap:anexo1}
+\thispagestyle{empty}
+\input{Capitulo-Anexos/anexo1.tex}
+
+
+\end{document}

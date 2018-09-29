@@ -1,0 +1,165 @@
+
+% Configurando layout para mostrar codigos Java
+%\lstset{language=[AspectJ]Java, basicstyle=\ttfamily\footnotesize,showstringspaces=false}
+%\lstset{language=[AspectJ]Java,
+%\lstset{language=Java,
+%	basicstyle=\scriptsize,
+%	keywordstyle=\color{black}\bfseries\scriptsize,
+%	identifierstyle=\rmfamily\scriptsize, 
+%	stringstyle=\ttfamily\scriptsize,
+%	showstringspaces=false,
+%	numbers=left, 
+%	numberstyle=\tiny}
+	
+\lstset{
+  language=Java,
+  basicstyle= \ttfamily\scriptsize,  % tiny, scriptsize, footnotesize, small, normalsize, large, Large, huge, Huge
+  keywordstyle=\color{jpurple}\bfseries,
+  stringstyle=\color{red},
+  commentstyle=\color{darkgreen},
+  morecomment=[s][\color{blue}]{/**}{*/},
+  extendedchars=true, 
+  showspaces=false, 
+  showstringspaces=false, 
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true, 
+  backgroundcolor=\color{cyan!10}, 
+  breakautoindent=true, 
+  captionpos=b,
+  xleftmargin=0pt,
+  tabsize=4
+}
+
+%*****************************  new commands   ************************
+% new colours
+\definecolor{gray}{rgb}{0.85,0.85,0.85} % definição de cor cinza
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}}
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{\RowColorName}}#2}{#3}}
+\definecolor{MyGray}{rgb}{0.85,0.85,0.85}
+\definecolor{MyDarkGray}{rgb}{0.7,0.7,0.7}
+
+%% languages
+%
+%\newcommand{\aspectj}{\normalfont{AspectJ}\xspace}
+%\newcommand{\caesarj}{\normalfont{CaesarJ}\xspace}
+%\newcommand{\aspectwerkz}{\normalfont{AspectWerkz}\xspace}
+%\newcommand{\jbossaop}{\normalfont{JBossAOP}\xspace}
+%\newcommand{\springaop}{\normalfont{SpringAOP}\xspace}
+%\newcommand{\java}{\normalfont{Java}\xspace}
+%\newcommand{\fortran}{\normalfont{Fortran}\xspace}
+%\newcommand{\simula}{\normalfont{SIMULA}\xspace}
+%\newcommand{\smalltalk}{\normalfont{Smalltalk}\xspace}
+%\newcommand{\squeak}{\normalfont{Squeak}\xspace}
+%\newcommand{\cansi}{\normalfont{C}\xspace}
+%%\newcommand{\cplusplus}{\normalfont{C++}\xspace}
+%\newcommand{\cplusplus}{\normalfont{C\footnotesize{++}}\xspace}
+%\newcommand{\csharp}{\normalfont{C\#}\xspace}
+%\newcommand{\pascal}{\normalfont{Pascal}\xspace}
+%\newcommand{\objectpascal}{\normalfont{Object Pascal}\xspace}
+%\newcommand{\modulatwo}{\normalfont{Modula-2}\xspace}
+%\newcommand{\modulathree}{\normalfont{Modula-3}\xspace}
+%\newcommand{\eiffel}{\normalfont{Eiffel}\xspace}
+%\newcommand{\php}{\normalfont{PHP}\xspace}
+%
+%\newcommand{\aspectcplusplus}{\normalfont{AspectC\footnotesize{++}}\xspace}
+%\newcommand{\aspectcansi}{\normalfont{AspectC}\xspace}
+%\newcommand{\aspectcsharp}{\normalfont{AspectC\#}\xspace}
+%\newcommand{\aspectsmalltalk}{\normalfont{AspectS}\xspace}
+%\newcommand{\aophp}{\normalfont{AOPHP}\xspace}
+%
+%\newcommand{\y}{\rule{8pt}{7pt}}
+%\newcommand{\x}{\hspace*{2pt}}
+%
+%% tools
+%
+%\newcommand{\proteum}{\emph{Proteum}\xspace}
+%\newcommand{\proteumim}{\emph{Proteum/IM}\xspace}
+%\newcommand{\proteumaj}{\emph{Proteum/AJ}\xspace}
+%
+%\newcommand{\start}{\emph{Start}\xspace}
+%
+%\newcommand{\jabuti}{\emph{JaBUTi}\xspace}
+%\newcommand{\jabutiaj}{\emph{JaBUTi/AJ}\xspace}
+%\newcommand{\jabutiweb}{\emph{JaBUTi/Web}\xspace}
+%
+%\newcommand{\mujava}{$\mu Java$\xspace}
+%\newcommand{\mudel}{\emph{MuDel}\xspace}
+%\newcommand{\mudelgen}{\emph{mudelgen}\xspace}
+%\newcommand{\ajmutator}{\emph{AjMutator}\xspace}
+%\newcommand{\ajte}{\emph{AJTE}\xspace}
+%\newcommand{\aspectra}{\emph{Aspectra}\xspace}
+%\newcommand{\jtest}{\emph{JTest}\xspace}
+%\newcommand{\rostra}{\emph{Rostra}\xspace}
+%\newcommand{\mutapro}{\emph{Muta-Pro}\xspace}
+%\newcommand{\ajato}{\emph{AJATO}\xspace}
+%
+%
+%\newcommand{\ant}{\emph{Ant}\xspace}
+%\newcommand{\junit}{\emph{JUnit}\xspace}
+%
+%%\newcommand{\ibatis}{\emph{iBATIS}\xspace}
+%%\newcommand{\hw}{\emph{HeathWatcher}\xspace}
+%%\newcommand{\mm}{\emph{MobileMedia}\xspace}
+%%\newcommand{\tsd}{\emph{Toll System Demonstrator}\xspace}
+%
+%\newcommand{\ibatis}{\element{iBATIS}\xspace}
+%\newcommand{\hw}{\element{HealthWatcher}\xspace}
+%\newcommand{\mm}{\element{MobileMedia}\xspace}
+%\newcommand{\ajhd}{\element{AJHotDraw}\xspace}
+%\newcommand{\ts}{\element{TollSystemDemonstrator}\xspace}
+%
+%
+%\newcommand{\stratego}{\emph{Stratego/XT}\xspace}
+%\newcommand{\aspectjfront}{\emph{AspectJ-front}\xspace}
+%
+%\newcommand{\aterm}{\textsf{aterm}\xspace}
+%\newcommand{\ajc}{\textsf{ajc}\xspace}
+%\newcommand{\abc}{\textsf{abc}\xspace}
+%
+%\newcommand{\rational}{\emph{IBM-Rational}\xspace}
+%\newcommand{\poseidon}{\emph{Poseidon}\xspace}
+%\newcommand{\argouml}{\emph{Argo-UML}\xspace}
+%
+%
+%
+%% others
+%
+%\newcommand{\refasset}{\emph{RefASSET}\xspace}
+%\newcommand{\reftest}{\emph{RefTEST}\xspace}
+%
+%\newcommand{\framework}{\emph{framework}\xspace}
+%\newcommand{\web}{\emph{Web}\xspace}
+%\newcommand{\bytecode}{\normalfont{bytecode}\xspace}
+%\newcommand{\bytecodes}{\normalfont{bytecodes}\xspace}
+%\newcommand{\jvm}{\normalfont{JVM}\xspace}
+%
+%\newcommand{\cfg}{\textsf{CFG}\xspace}
+%\newcommand{\icfg}{\textsf{ICFG}\xspace}
+%\newcommand{\fcfg}{\textsf{FCFG}\xspace}
+%\newcommand{\ccfg}{\textsf{CCFG}\xspace}
+%\newcommand{\aocfg}{\textsf{AOCFG}\xspace}
+%\newcommand{\aodu}{\textsf{AODU}\xspace}
+%\newcommand{\pwdu}{\textsf{PWDU}\xspace}
+%\newcommand{\pcdu}{\textsf{PCDU}\xspace}
+%\newcommand{\madu}{\textsf{MADU}\xspace}
+%\newcommand{\ig}{\textsf{IG}\xspace}
+%\newcommand{\dug}{\textsf{DUG}\xspace}
+%\newcommand{\defusegraph}{\emph{Def-Use Graph}\xspace}
+%\newcommand{\fsm}{\textsf{FSM}\xspace}
+%\newcommand{\free}{\textsf{FREE}\xspace}
+%\newcommand{\asm}{\textsf{ASM}\xspace}
+
+
+
+%%%% COLOURED - inserted by Fabiano
+%\newcommand{\bento}[1]{{{\color{black} #1}}}
+%\newcommand{\alessandro}[1]{{\color{black} #1}}
+%\newcommand{\alessandroNew}[1]{{\color{black} #1}}
+%\newcommand{\fabiano}[1]{{\color{black} #1}}
+%\newcommand{\important}[1]{{\color{red} [IMPORTANTE: #1]}}
+%\newcommand{\fabianonew}[1]{{\color{black} #1}}
+%
+%\newcommand{\rever}[1]{{\color{red} #1}}
+%\newcommand{\novo}[1]{{\color{blue} #1}}
+

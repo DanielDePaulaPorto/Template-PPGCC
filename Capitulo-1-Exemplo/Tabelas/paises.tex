@@ -1,0 +1,50 @@
+\begin{table}[!ht]
+
+%   float placement
+%----------------------
+%-h means here: Place the figure in the text where the figure environment is written, if there is enough room left on the page
+%-t means top: Place it at the top of a page.
+%-b means bottom: Place it at the bottom of a page.
+%-p means page: Place it on a page containing only floats, such as figures and tables.
+%-! allows to ignore certain parameters of LaTeX for float placement, for example:
+%
+%	\topfraction: maximal portion of a page (or column resp., here and below), which is allowed to be used by floats at its top, default 0.7
+%	\bottomfraction: maximal portion of a page, which is allowed to be used by floats at its bottom, default value 0.3
+%	\textfraction: minimal portion of a page, which would be used by body text, default value 0.2
+%	\floatpagefraction: minimal portion of a float page, which has to be filled by floats, default value 0.2. This avoids too much white space on float pages.
+%	topnumber: maximal number of floats allowed at the top of a page, default 2
+%	bottomnumber: maximal number of floats allowed at the bottom of a page, default 1
+%	totalnumber: maximal number of floats allowed at whole page, default 3
+
+\setlength{\arrayrulewidth}{2\arrayrulewidth}  % line thickness
+\setlength{\tabcolsep}{4pt} % spacing between columns
+\centering
+
+\caption{Exemplo de uso de tabelas}
+\label{tablePaises}
+
+%\fontencoding{T1}
+%\fontfamily{\rmdefault}
+\fontseries{m}
+\fontshape{n}
+%\fontsize{7.75}{8.5}
+\selectfont
+	\begin{tabular}{lclc}
+		\toprule
+		Country           & Number & Country         & Number \\ \midrule
+		Germany        & 8          & USA          & 8          \\
+		Brazil         & 7          & India        & 7          \\
+		United Kingdom & 7          & Spain        & 6          \\
+		Portugal       & 5          & Colombia     & 4          \\
+		Ireland        & 4          & Israel       & 4          \\
+		Italy          & 4          & Mexico       & 4          \\
+		Switzerland    & 4          & Turkey       & 4          \\
+		Japan          & 3          & Netherlands  & 3          \\
+		Norway         & 3          & Belgium      & 2          \\
+		Argentina      & 1          & Austria      & 1          \\
+		China          & 1          & France       & 1          \\
+		Malaysia       & 1          & Saudi Arabia & 1          \\
+		Sweden         & 1          &              &            \\ \bottomrule
+	\end{tabular}
+\end{table}
+
